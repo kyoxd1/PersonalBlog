@@ -1,0 +1,19 @@
+@model List<PersonalBlog.Models.Article>
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h1>Admin Dashboard</h1>
+<a href="/Admin/Add" class="btn btn-primary">New Article</a>
+
+@foreach (var article in Model)
+{
+    <div class="article">
+        <h2>@article.Title</h2>
+        <small>@article.PublicationDate.ToString("MMMM dd, yyyy")</small>
+        <div>
+            <a href="/Admin/Edit/@article.Id" class="btn btn-secondary">Edit</a>
+            <a href="/Admin/Delete/@article.Id" class="btn btn-danger">Delete</a>
+        </div>
+    </div>
+}

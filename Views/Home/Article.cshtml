@@ -1,0 +1,13 @@
+@model PersonalBlog.Models.Article
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="article-detail">
+    <h1>@Model.Title</h1>
+    <small class="publication-date">Publicado el @Model.PublicationDate.ToString("MMMM dd, yyyy")</small>
+    <div class="article-content">
+        @Model.Content
+    </div>
+    <a href="/" class="btn btn-secondary">Volver al inicio</a>
+</div>

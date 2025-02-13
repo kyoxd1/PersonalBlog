@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Admin Login";
+}
+
+<h1>Admin Login</h1>
+
+<form method="post" action="/Admin/Login">
+    <div>
+        <label>Username:</label>
+        <input type="text" name="username" required>
+    </div>
+    
+    <div>
+        <label>Password:</label>
+        <input type="password" name="password" required>
+    </div>
+    
+    <button type="submit">Login</button>
+</form>
+
+@if (!ViewContext.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        Invalid username or password
+    </div>
+}

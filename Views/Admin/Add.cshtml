@@ -1,0 +1,26 @@
+@model PersonalBlog.Models.Article
+@{
+    ViewData["Title"] = "Add New Article";
+}
+
+<h1>Add New Article</h1>
+
+<form asp-controller="Admin" asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="Title">Title:</label>
+        <input asp-for="Title" class="form-control" required>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="Content">Content:</label>
+        <textarea asp-for="Content" class="form-control" rows="10" required></textarea>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="PublicationDate">Publication Date:</label>
+        <input asp-for="PublicationDate" type="datetime-local" class="form-control" required>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Save Article</button>
+    <a href="/Admin/Dashboard" class="btn btn-secondary">Cancel</a>
+</form>

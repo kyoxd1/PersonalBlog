@@ -1,0 +1,14 @@
+﻿@model List<PersonalBlog.Models.Article>
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Mi Blog</h1>
+@foreach (var article in Model)
+{
+    <div class="article">
+        <h2><a href="/Home/Article/@article.Id">@article.Title</a></h2>
+        <small>@article.PublicationDate.ToString("MMMM dd, yyyy")</small>
+        <p>@article.Content.Substring(0, Math.Min(article.Content.Length, 100))...</p>
+    </div>
+}
